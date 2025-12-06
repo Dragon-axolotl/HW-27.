@@ -1,0 +1,78 @@
+body {
+    margin: 0;
+    background: #ddd;
+    font-family: Arial, sans-serif;
+}
+
+/* уся зона з меню */
+.menu-wrapper {
+    height: 300px;
+    margin-top: 80px;
+}
+
+/* ліва чорна полоса */
+.side-bar {
+    width: 40px;
+    height: 100%;
+    background: #2c2c2c;
+    position: relative;
+    overflow: hidden;
+    transition: width 0.35s ease;
+}
+
+/* коли наводимо – панель розширюється */
+.side-bar:hover {
+    width: 300px;
+}
+
+/* вертикальний текст */
+.label {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-90deg);
+    transform-origin: center;
+    color: #bcbcbc;
+    font-size: 14px;
+    letter-spacing: 2px;
+    transition: opacity 0.2s ease;
+}
+
+/* текст зникає */
+.side-bar:hover .label {
+    opacity: 0;
+}
+
+/* список */
+.menu {
+    list-style: none;
+    padding: 40px 20px;
+    margin: 0;
+    opacity: 0;
+    transition: opacity 0.2s ease 0.2s;
+}
+
+/* коли відкрито – показуємо */
+.side-bar:hover .menu {
+    opacity: 1;
+}
+
+.menu li {
+    color: #e3e3e3;
+    margin: 12px 0;
+    padding-left: 15px;
+    position: relative;
+    font-size: 15px;
+}
+
+/* маленькі ромбики точно як на фото */
+.menu li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 5px;
+    width: 7px;
+    height: 7px;
+    background: #ff6a00;
+    transform: rotate(45deg);
+}
